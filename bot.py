@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 
 SCHEDULE_TIME = 60
-REDDIT_NAME = 'u/post-history-bot'
+REDDIT_NAME = ''
 
 
 def job():
@@ -40,7 +40,7 @@ def check_mentions(reddit):
 
 
 def valid_msg(body):
-    if not body.startswith(REDDIT_NAME):
+    if not (body.startswith('u/post-history-bot') or body.startswith('/u/post-history-bot')):
         return False
 
     words = body.split(' ')
