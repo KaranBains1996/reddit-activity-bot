@@ -77,6 +77,9 @@ if __name__ == '__main__':
     load_dotenv()
     schedule.every(SCHEDULE_TIME).seconds.do(job)
 
+    # Run job immediately to address pending requests
+    job()
+
     while True:
         schedule.run_pending()
         time.sleep(1)
